@@ -1,0 +1,8 @@
+Oefening 1
+	Deze implementatie van getMaxDepth() zal nie de correcte hoogte van een boom berekenen.
+	In plaats van elk pad in de boom te overlopen zoekt deze implementatie enkel in het meest
+	linkse en het meest rechtse pad van de root. Deze paden zijn niet per se de langste paden
+	in de boom en dus wordt het langste pad (en de diepte van de boom) niet altijd gevonden.
+	
+Oefening 2
+	Zie binarySearchTree.BinarySearchTree1.class
