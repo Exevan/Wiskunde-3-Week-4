@@ -1,38 +1,22 @@
 package binaryTree;
 
-public class BinaryTree2<E> {
+public class BinaryTree2 {
 
-	private class BinaryNode<E> {
-
-		public E data;
-		public BinaryNode<E> left, right ;
-
-		public String toString(){
-			return data.toString();
-		}
+	private class BinaryNode {
+		public int data;
+		public BinaryNode left, right ;
 	}
 
-	private BinaryNode<E> root;
+	private BinaryNode root;
 
-
-	public void printInorder2(){
-		Stack<BinaryNode<E>> stack = new Stack <BinaryNode <E> >();
-		BinaryNode <E > node = root ;
-		while (! stack . isEmpty () || node != null ){
-			if ( node != null ){
-				stack . push ( node );
-				node = node . getLeft ();
-			} else {
-				node = stack . pop ();
-				System . out . print ( node . toString () + " " );
-				if ( node . getRight () != null ){
-					stack . push ( node . getRight ());
-				}
-				node = null ;
-			}
+	public boolean lookup (int target) {
+		BinaryNode node = root;
+		while(node != null && node.data != target) {
+			if(target < node.data)
+				node = node.left;
+			else
+				node = node.right;
 		}
-		System . out . println ();
+		return node != null;
 	}
-
-
 }

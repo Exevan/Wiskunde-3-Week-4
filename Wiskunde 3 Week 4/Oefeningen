@@ -6,3 +6,12 @@ Oefening 1
 	
 Oefening 2
 	Zie binarySearchTree.BinarySearchTree1.class
+	
+Oefening 3
+	Zie binaryHeap.BinaryMinHeap1.class
+	
+Oefening 4
+	Wanneer deze implementatie vanuit node 1 rechts gaat naar node2 zal het linker child van 
+	node 2 nooit op de stack gepusht worden. Dus zodra het algoritme rechts begint te zoeken,
+	zal het nooit meer naar links kunnen zoeken.
+	Voor een correcte en efficiënte implementatie, zie Wiskunde-3-Week-1/Wiskunde 3 Week 1/src/binaryTree/BinaryTree.java
