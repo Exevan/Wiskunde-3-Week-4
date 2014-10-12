@@ -15,3 +15,13 @@ Oefening 4
 	node 2 nooit op de stack gepusht worden. Dus zodra het algoritme rechts begint te zoeken,
 	zal het nooit meer naar links kunnen zoeken.
 	Voor een correcte en efficiënte implementatie, zie Wiskunde-3-Week-1/Wiskunde 3 Week 1/src/binaryTree/BinaryTree.java
+	
+Oefening 5
+	Zie binarySearchTree.BinarySearchTree2.class
+	
+Oefening 6
+	Deze code voor deleteMin() werkt niet omdat het bubble-down mechanisme een waarde niet effectief wisselt met zijn kleinste kind 
+	terwijl dat in deze implementatie el noodzakelijk is. Het gevolg hiervan is dat wanneer een waarde een keer naar beneden 
+	gewisseld moet worden het algoritme wel werkt maar wanneer een waarde meer dan een keer naar beneden gewisseld moet worden, loopt het mis.
+	Neem als voorbeeld de heap [1, 1, 1, 10, 1, 10] en verwijder het minimum. Het resultaat zou [1, 1, 1, 10, 10] moeten zijn 
+	maar we vinden [1, 10, 1, 10, 1]. Wanneer we er voor zorgen dat een waarde wel correct gewisseld wordt, vinden we het correcte resultaat.

@@ -1,11 +1,11 @@
 package binaryHeap;
 
-public class BinaryMinHeap1<E extends Comparable<E>> {
+public class BinaryMinHeap2<E extends Comparable<E>> {
 
 	private E[] heap ;
 	private int size ;
 
-	public BinaryMinHeap1(int capacity){
+	public BinaryMinHeap2(int capacity){
 		heap = (E[]) new Comparable[capacity];
 		size = 0;
 	}
@@ -43,22 +43,36 @@ public class BinaryMinHeap1<E extends Comparable<E>> {
 		return a.compareTo(b) < 0;
 	}
 
-	public E getMax(){
-		int s = (int) Math.floor((size-2) / 2);
-		E max = heap[s];
-		for(int i = s+1; i < size; i++)
-			if(heap[i].compareTo(max) < 0) max = heap[i];
-		return max;		
+	public E deleteMin (){
+		if (size <= 0) return null ;
+		E tmp = heap[0];
+		heap[0] = heap[size -1];
+		int i = 0;
+		boolean stop = false ;
+		do {
+			int left = 2*i+1;
+			int right = 2*i+2;
+			int smallest = i;
+			
+			if(left < size && heap[left].compareTo(heap[smallest]) < 0)
+				smallest = left;
+			if(right < size && heap[right].compareTo(heap[smallest]) < 0)
+				smallest = right;
+			
+			if(smallest != i) {
+				E tmp2 = heap[i]; //toegevoegd
+				heap[i] = heap[smallest];
+				heap[smallest] = tmp2; //toegevoegd
+				i = smallest ;
+			} else {
+				stop = true ;
+				heap[i] = heap[size-1];
+			}
+			
+		} while(!stop);
+		-- size ;
+		return tmp ;
 	}
-
-	//	Geoptimaliseerd
-	//	public E getMax(){
-	//		int s = (size/2);
-	//		E max = heap[s];
-	//		for(int i = s; i < size; i++)
-	//			if(heap[i].compareTo(max) < 0) max = heap[i];
-	//		return max;		
-	//	}
 
 	@Override
 	public String toString() {
